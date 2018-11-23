@@ -13,8 +13,11 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "babel-runtime": "^6.26.0",
     "contentful": "^7.0.5",
-    "nuxt": "^2.0.0"
+    "contentful-management": "^3.4.0",
+    "nuxt": "^2.0.0",
+    "vue-markdown": "^2.2.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

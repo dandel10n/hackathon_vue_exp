@@ -1,14 +1,15 @@
-<template lang="html">
-  <div>
+<template>
+  <div class="container">
     <h1>{{staticContent.fields.title}}</h1>
     <div>
-      {{staticContent.fields.content}}
+      <vue-markdown>{{staticContent.fields.content}}</vue-markdown>
     </div>
 
   </div>
 </template>
 
 <script>
+  import VueMarkdown from 'vue-markdown'
   import {createClient} from '~/plugins/contentful.js'
 
   const client = createClient()
@@ -30,10 +31,18 @@
           staticContent: staticContent.items[0]
         }
       }).catch(console.error)
+    },
+    components: {
+      VueMarkdown
     }
   }
 </script>
 
 
-<style lang="css">
+<style scoped>
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
 </style>
